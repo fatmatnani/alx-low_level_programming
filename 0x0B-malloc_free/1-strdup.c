@@ -1,12 +1,12 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
-
+#include "main.h"
 /**
- * *_strdup - copies the string given as parameter
- * @str: string to duplicate
- *
- * Return: pointer to the copied string (Success), NULL (Error)
+ * _strdup - duplicate to new memory space location
+ * @str: char
+ * Return: 0
  */
+
 char *_strdup(char *str)
 {
 	char *duplicate;
