@@ -1,12 +1,14 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
+ * print_all - function with 2 parameter
+ * @format: char type pointer to string
+ *
+ * Description: prints anything followed by a new line
+ * Return: na
  */
-
 void print_all(const char * const format, ...)
 {
 	int j;
@@ -28,20 +30,19 @@ void print_all(const char * const format, ...)
 			printf("%c%s", va_arg(ap, int), space);
 			break;
 		case 'i':
-			printf("%f%s", va_arg(ap, double), space);
+			printf("%d%s", va_arg(ap, int), space);
 			break;
 		case 'f':
 			printf("%f%s", va_arg(ap, double), space);
 			break;
 		case 's':
-			str = va_arg(ap, char*);
+			str = va_arg(ap, char *);
 			if (!str || !*str)
 				str = "(nil)";
 			printf("%s%s", str, space);
 			break;
 		}
 		j++;
-
 	}
 	printf("\n");
 }
