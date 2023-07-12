@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * interpolation_search - Searches for a value in a sorted array of integers
+ * interpolation_search - Searches for value in sorted array of integers
  * @array: Pointer to the first element of the array to search in
  * @size: Number of elements in array
  * @value: Value to search for
  *
- * Return: The first index where value is located, or -1 on failure
+ * Return: First index where value is located, -1 on failure
  */
 int interpolation_search(int *array, size_t size, int value)
 {
@@ -28,7 +28,8 @@ int interpolation_search(int *array, size_t size, int value)
 			return (-1);
 		}
 
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) /
+				(array[high] - array[low])) * (value - array[low]));
 
 		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 
@@ -43,4 +44,3 @@ int interpolation_search(int *array, size_t size, int value)
 
 	return (-1);
 }
-
